@@ -10,7 +10,7 @@ class ApiController extends Controller
     
 
     public function getPensionnes(Request $request){
-        $pensionnes = CMSS::take(100);
+        $pensionnes = CMSS::limit(100)->get();
         return $pensionnes->toJson();
     }
 }
